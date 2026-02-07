@@ -18,6 +18,7 @@ def activity_base_price(df):
 
     df['base_price'] = (df["cat1_index"] + 0.5 * df['Popularity'])*3
     df.to_csv('data_collection/Pricing/priced_activity.csv')
+    df.to_csv('data_collection/Database/oxford.csv')
     return
 
 
