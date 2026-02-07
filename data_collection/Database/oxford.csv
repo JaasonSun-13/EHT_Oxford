@@ -1,0 +1,237 @@
+,Unnamed: 0,No.,Activity / Attraction,Category,Postcode,District/Borough,City,Latitude,Longitude,Cat1,Cat2,Popularity,cat1_index,base_price
+0,0,1,Martyrs' Memorial,historic:monument,OX1 3AE,City Centre,Oxford,51.755087,-1.2589965,historic,monument,3,2,10.5
+1,1,2,Vue Cinema Oxford,amenity:cinema,OX4 4XP,Littlemore,Oxford,51.7175719,-1.2109568,amenity,cinema,1,2,7.5
+2,2,3,Headington County Library,amenity:library,OX3 9HX,Headington,Oxford,51.7627905,-1.2090977,amenity,library,5,2,13.5
+3,3,4,Grave of C. S. Lewis,tourism:attraction,OX3 8LH,Headington,Oxford,51.7573158,-1.1981485,tourism,attraction,1,5,16.5
+4,4,5,Old Marston Library,amenity:library,OX3 0PH,Old Marston,Oxford,51.7718956,-1.2364367,amenity,library,2,2,9.0
+5,5,6,New Marston War Memorial,historic:memorial,OX3 0EA,New Marston,Oxford,51.7585101,-1.2356585,historic,memorial,1,2,7.5
+6,6,7,Oxfordshire and Buckinghamshire Light Infantry War Memorial,historic:memorial,OX4 3JR,Rose Hill,Oxford,51.7323675,-1.2283123,historic,memorial,5,2,13.5
+7,7,8,New Theatre Oxford,amenity:theatre,OX1 2AG,City Centre,Oxford,51.7538627,-1.2598378,amenity,theatre,5,2,13.5
+8,8,9,Blackwell's,shop:books,OX1 3BQ,City Centre,Oxford,51.7546335,-1.2555092,shop,books,3,0,4.5
+9,9,10,Rewley Abbey,historic:ruins,OX1 2RA,City Centre,Oxford,51.7543071,-1.2683555,historic,ruins,1,2,7.5
+10,10,11,Museum of Oxford,tourism:museum,OX1 1BX,City Centre,Oxford,51.7513841,-1.2571096,tourism,museum,5,5,22.5
+11,11,12,Site of the Morris Longwall Garage,tourism:attraction,OX1 3TX,City Centre,Oxford,51.7545295,-1.248955,tourism,attraction,2,5,18.0
+12,12,13,Tirah Memorial,historic:memorial,OX1 1LT,City Centre,Oxford,51.7517423,-1.2600009,historic,memorial,1,2,7.5
+13,13,14,Old Fire Station Theatre,amenity:theatre,OX1 2AQ,City Centre,Oxford,51.7536471,-1.2622781,amenity,theatre,4,2,12.0
+14,14,15,Shelley Memorial,tourism:artwork,OX1 4BJ,City Centre,Oxford,51.7525813,-1.2524494,tourism,artwork,4,5,21.0
+15,15,16,Millennium Milepost Eastern By-Pass Road,tourism:information,OX4 4UP,Oxfordshire,Vale of White Horse,51.7255782,-1.2417176,tourism,information,3,5,19.5
+16,16,17,Edgar George Wilson,historic:memorial,OX2 0EW,South Oxford,Oxford,51.7469047,-1.2675544,historic,memorial,1,2,7.5
+17,17,18,Jarn Mound,tourism:attraction,OX1 5JF,Oxfordshire,Vale of White Horse,51.7169146,-1.2973681,tourism,attraction,3,5,19.5
+18,18,19,Oxford City Boundary Stone,historic:boundary_stone,OX2 8AZ,Wolvercote,Oxford,51.7778925,-1.282858,historic,boundary_stone,3,2,10.5
+19,19,20,Oxford Spires,shop:gift,OX1 3EX,City Centre,Oxford,51.7524983,-1.2578658,shop,gift,5,0,7.5
+20,20,21,Boathouse Corner,tourism:viewpoint,OX1 4UW,East Oxford,Oxford,51.7420762,-1.247947,tourism,viewpoint,5,5,22.5
+21,21,22,Kingfisher Point,tourism:viewpoint,OX4 1EQ,East Oxford,Oxford,51.7439835,-1.2468878,tourism,viewpoint,1,5,16.5
+22,22,23,St Margaret's Well,amenity:place_of_worship,OX2 0NG,Oxfordshire,Oxford,51.7690892,-1.2977882,amenity,place_of_worship,3,2,10.5
+23,23,24,Daunt Books,shop:books,OX2 7HN,Summertown,Oxford,51.7777436,-1.2652828,shop,books,5,0,7.5
+24,24,25,The Cross of Sacrifice,historic:memorial,OX2 0FQ,Botley,Vale of White Horse,51.7502984,-1.2937342,historic,memorial,2,2,9.0
+25,25,26,Blackwell's Sci-Fi and Manga,shop:books,OX1 3BS,City Centre,Oxford,51.7542306,-1.2563562,shop,books,4,0,6.0
+26,26,27,Antiques on High,shop:antiques,OX1 4BH,City Centre,Oxford,51.7524948,-1.2506711,shop,antiques,5,0,7.5
+27,27,28,Oxford War Memorial,historic:memorial,OX1 3LN,City Centre,Oxford,51.7583199,-1.2601264,historic,memorial,1,2,7.5
+28,28,29,Alice's Shop,shop:gift,OX1 1RA,City Centre,Oxford,51.7488992,-1.2567646,shop,gift,5,0,7.5
+29,29,30,Tower of the Five Orders,tourism:attraction,OX1 3BW,City Centre,Oxford,51.7540982,-1.2540762,tourism,attraction,2,5,18.0
+30,30,31,Edmond Halley,historic:memorial,OX1 3BL,City Centre,Oxford,51.7545022,-1.2532536,historic,memorial,3,2,10.5
+31,31,32,Botley Library,amenity:library,OX2 9TH,Botley,Vale of White Horse,51.7508658,-1.2985562,amenity,library,3,2,10.5
+32,32,33,Walton Well Drinking Fountain,tourism:attraction,OX2 6EE,Osney,Oxford,51.7622249,-1.2699357,tourism,attraction,3,5,19.5
+33,33,34,New Marston (South) Residents Association,tourism:information,OX3 0HF,New Marston,Oxford,51.7616074,-1.2415033,tourism,information,4,5,21.0
+34,34,35,Marks & Spencer,shop:department_store,OX1 1AB,City Centre,Oxford,51.7513171,-1.2588846,shop,department_store,1,0,1.5
+35,35,36,Waterstones,shop:books,OX1 1EP,City Centre,Oxford,51.7515102,-1.2593919,shop,books,3,0,4.5
+36,36,37,Shotover Country Park Map,tourism:information,OX3 8GH,Forest Hill with Shotover,South Oxfordshire,51.7516194,-1.1846753,tourism,information,2,5,18.0
+37,37,38,Littlemore Library,amenity:library,OX4 6JS,Littlemore,Oxford,51.7225871,-1.2158025,amenity,library,2,2,9.0
+38,38,39,Site of Headington Union Workhouse,historic:workhouse,OX3 8BB,Headington,Oxford,51.7619328,-1.2015447,historic,workhouse,1,2,7.5
+39,39,40,J.R.R. Tolkien,historic:memorial,OX2 6UH,North Oxford,Oxford,51.771051,-1.2602266,historic,memorial,3,2,10.5
+40,40,41,Blue Plaque - Niradc. Chaudhuri,historic:memorial,OX2 7AU,North Oxford,Oxford,51.7725127,-1.2657186,historic,memorial,2,2,9.0
+41,41,42,Paul Nash,historic:memorial,OX2 7AL,North Oxford,Oxford,51.7704346,-1.2620362,historic,memorial,1,2,7.5
+42,42,43,Sir Francis Simon,historic:memorial,OX2 6UZ,North Oxford,Oxford,51.7722195,-1.2600698,historic,memorial,2,2,9.0
+43,43,44,Sir James Murray,historic:memorial,OX2 6JT,North Oxford,Oxford,51.7676184,-1.2614829,historic,memorial,3,2,10.5
+44,44,45,Roger Bannister,historic:memorial,OX4 1EF,East Oxford,Oxford,51.7470889,-1.2416385,historic,memorial,2,2,9.0
+45,45,46,William Morris,historic:memorial,OX4 1EX,East Oxford,Oxford,51.746445,-1.2390633,historic,memorial,3,2,10.5
+46,46,47,The First Superconducting Magnet for MRI Scanning,historic:memorial,OX2 0ES,Osney,Oxford,51.7480937,-1.2728862,historic,memorial,1,2,7.5
+47,47,48,Inorganic Chemistry Laboratory,historic:memorial,OX1 3AN,City Centre,Oxford,51.7580476,-1.2549223,historic,memorial,2,2,9.0
+48,48,49,Glucose Sensor,historic:memorial,OX1 3AN,City Centre,Oxford,51.7580476,-1.2549223,historic,memorial,3,2,10.5
+49,49,50,Jane Burden,historic:memorial,OX1 3BL,City Centre,Oxford,51.7546925,-1.2532851,historic,memorial,4,2,12.0
+50,50,51,The Oxfordshire Yeomanry,historic:memorial,OX1 3JB,City Centre,Oxford,51.7530009,-1.2584746,historic,memorial,2,2,9.0
+51,51,52,Bodleian Library Ticket office,tourism:attraction,OX1 3BW,City Centre,Oxford,51.7541058,-1.2540648,tourism,attraction,5,5,22.5
+52,52,53,Whitley V Aircraft Crash Memorial Plaque,historic:memorial,OX2 6UD,North Oxford,Oxford,51.7711735,-1.2556037,historic,memorial,5,2,13.5
+53,53,54,Dyson Perrins Laboratory,historic:memorial,OX1 3AN,City Centre,Oxford,51.7584268,-1.253599,historic,memorial,2,2,9.0
+54,54,55,Clarendon Laboratory,historic:memorial,OX1 3QU,City Centre,Oxford,51.7594188,-1.2564389,historic,memorial,1,2,7.5
+55,55,56,Havel's Place,amenity:bench,OX2 6QA,Summertown,Oxford,51.7639742,-1.2518548,amenity,bench,1,2,7.5
+56,56,57,St Philip's Books,shop:books,OX1 1RA,City Centre,Oxford,51.7488479,-1.2567679,shop,books,2,0,3.0
+57,57,58,Oxford Blue,shop:gift,OX1 4AG,City Centre,Oxford,51.7524278,-1.2551696,shop,gift,1,0,1.5
+58,58,59,Oxford Souvenirs,shop:gift,OX1 4AN,City Centre,Oxford,51.7528539,-1.2519511,shop,gift,5,0,7.5
+59,59,60,Babylon,shop:gift,OX1 4DN,City Centre,Oxford,51.7525155,-1.2507863,shop,gift,2,0,3.0
+60,60,61,TGJones,shop:books,OX1 3EY,City Centre,Oxford,51.7532514,-1.2582987,shop,books,5,0,7.5
+61,61,62,Arcadia,shop:antiques,OX1 2DR,City Centre,Oxford,51.7535687,-1.2590044,shop,antiques,1,0,1.5
+62,62,63,Oxford Memories,shop:gift,OX1 1BT,City Centre,Oxford,51.7507029,-1.2571104,shop,gift,5,0,7.5
+63,63,64,Oxford Gift Box,shop:gift,OX1 3EY,City Centre,Oxford,51.7530766,-1.2585344,shop,gift,2,0,3.0
+64,64,65,The Crafters Emporium,shop:gift,OX1 3HA,City Centre,Oxford,51.7533405,-1.258671,shop,gift,1,0,1.5
+65,65,66,House of Wonders,shop:gift,OX1 3EY,City Centre,Oxford,51.7531315,-1.2585656,shop,gift,3,0,4.5
+66,66,67,Scribbler,shop:gift,OX1 1LQ,City Centre,Oxford,51.7518611,-1.259801,shop,gift,1,0,1.5
+67,67,68,Historical Oxford,shop:gift,OX1 3EY,City Centre,Oxford,51.753179,-1.2585888,shop,gift,5,0,7.5
+68,68,69,Medieval Jewish Burial Ground,historic:tomb,OX1 4AU,City Centre,Oxford,51.751706,-1.2475517,historic,tomb,5,2,13.5
+69,69,70,Penicillin Research,historic:memorial,OX1 4AU,City Centre,Oxford,51.7515814,-1.2472566,historic,memorial,1,2,7.5
+70,70,71,Medieval Jewish Cemetery,historic:memorial,OX1 4AU,City Centre,Oxford,51.7515306,-1.2472087,historic,memorial,3,2,10.5
+71,71,72,Allen Ward and Medical Library,amenity:library,OX3 7QJ,Headington,Oxford,51.7503799,-1.2221528,amenity,library,4,2,12.0
+72,72,73,Bodleian Law Library,amenity:library,OX1 3UR,City Centre,Oxford,51.7571869,-1.2476458,amenity,library,2,2,9.0
+73,73,74,South Park Commemoration Stone,historic:memorial,OX4 1FN,Headington,Oxford,51.7519942,-1.2365482,historic,memorial,3,2,10.5
+74,74,75,Royalist surrender at Oxford,historic:memorial,OX3 0QB,Old Marston,Oxford,51.7764231,-1.2389315,historic,memorial,2,2,9.0
+75,75,76,John Lewis & Partners,shop:department_store,OX1 1PB,City Centre,Oxford,51.7493161,-1.2628832,shop,department_store,1,0,1.5
+76,76,77,Blackwell's,shop:books,OX1 1DN,City Centre,Oxford,51.7495301,-1.2620233,shop,books,4,0,6.0
+77,77,78,Oxford Westgate Library,amenity:library,OX1 1PE,City Centre,Oxford,51.7514564,-1.2605382,amenity,library,4,2,12.0
+78,78,79,Curzon Oxford,amenity:cinema,OX1 1NZ,City Centre,Oxford,51.7495703,-1.2618351,amenity,cinema,2,2,9.0
+79,79,80,International Brigade Memorial,historic:memorial,OX4 1BD,Headington,Oxford,51.7513438,-1.2374278,historic,memorial,1,2,7.5
+80,80,81,Weston Library Gift Shop,shop:gift,OX1 3BG,City Centre,Oxford,51.754733,-1.2552241,shop,gift,5,0,7.5
+81,81,82,Site of the Burning of the Oxford Martyrs,historic:memorial,OX1 3BS,City Centre,Oxford,51.7542783,-1.257726,historic,memorial,2,2,9.0
+82,82,83,Birthplace of Richard I and John,historic:memorial,OX1 2NR,City Centre,Oxford,51.7550227,-1.2627164,historic,memorial,3,2,10.5
+83,83,84,Close to this spot lies the site of the mediaeval gallows,historic:memorial,OX1 1AZ,City Centre,Oxford,51.7515839,-1.2629768,historic,memorial,1,2,7.5
+84,84,85,Tolkien's Table,tourism:attraction,OX1 4JD,City Centre,Oxford,51.7507536,-1.2507526,tourism,attraction,4,5,21.0
+85,85,86,Millennium Milepost Sandford-on-Thames,tourism:information,OX1 5RP,Oxfordshire,Vale of White Horse,51.7058816,-1.2380275,tourism,information,2,5,18.0
+86,86,87,Dorothy Crowfoot Hodgkin,historic:memorial,OX1 3AN,City Centre,Oxford,51.7580485,-1.2549024,historic,memorial,2,2,9.0
+87,87,88,St John Street Area Residents' Association Community Noticeboard,tourism:information,OX1 2LF,City Centre,Oxford,51.7553417,-1.2615719,tourism,information,3,5,19.5
+88,88,89,Gilbert Charles Bourne,historic:memorial,OX4 4EL,Iffley,Oxford,51.7311644,-1.2413202,historic,memorial,1,2,7.5
+89,89,90,The Painted Room,tourism:attraction,OX1 3EU,City Centre,Oxford,51.7523094,-1.2576376,tourism,attraction,4,5,21.0
+90,90,91,William Kimber,historic:memorial,OX3 8NL,Headington,Oxford,51.755674,-1.2052171,historic,memorial,3,2,10.5
+91,91,92,Highfield Residents' Association Community Noticeboard,tourism:information,OX3 7AU,Headington,Oxford,51.7560925,-1.213647,tourism,information,2,5,18.0
+92,92,93,Churchill Community Noticeboard,tourism:information,OX3 7QD,Headington,Oxford,51.7550171,-1.2188276,tourism,information,5,5,22.5
+93,93,94,Michael Pilch Studio,amenity:theatre,OX1 3TS,City Centre,Oxford,51.7558605,-1.2507963,amenity,theatre,1,2,7.5
+94,94,95,O'Reilly Theatre,amenity:theatre,OX1 3PG,City Centre,Oxford,51.7586454,-1.2586466,amenity,theatre,3,2,10.5
+95,95,96,Ivy Williams,historic:memorial,OX1 4HS,City Centre,Oxford,51.7520391,-1.2545991,historic,memorial,4,2,12.0
+96,96,97,Edward Brooks VC,historic:memorial,OX3 7AP,Headington,Oxford,51.7568148,-1.2117017,historic,memorial,1,2,7.5
+97,97,98,Muntjac Point,tourism:viewpoint,OX1 4UW,East Oxford,Oxford,51.7387013,-1.2443927,tourism,viewpoint,1,5,16.5
+98,98,99,Elizabeth Bowen,historic:memorial,OX3 9BT,Headington,Oxford,51.76318,-1.2135951,historic,memorial,1,2,7.5
+99,99,100,Salvador de Madariaga,historic:memorial,OX3 9HW,Headington,Oxford,51.7644587,-1.2111199,historic,memorial,4,2,12.0
+100,100,101,Sherardian Library of Plant Taxonomy,amenity:library,OX1 3RB,City Centre,Oxford,51.7590373,-1.2524298,amenity,library,2,2,9.0
+101,101,102,"Professor Gathorne Robert Girdlestone ""GRG""",historic:memorial,OX3 7QP,Headington,Oxford,51.753072,-1.2085681,historic,memorial,1,2,7.5
+102,102,103,Sir Isaiah Berlin O.M.,historic:memorial,OX3 9HW,Headington,Oxford,51.7623324,-1.211098,historic,memorial,1,2,7.5
+103,103,104,Joe Pullen's Tree,historic:memorial,OX3 7TD,Headington,Oxford,51.7563533,-1.2276797,historic,memorial,3,2,10.5
+104,104,105,The Queen's College Library,amenity:library,OX1 4AW,City Centre,Oxford,51.753548,-1.2513558,amenity,library,1,2,7.5
+105,105,106,Balliol College Library,amenity:library,OX1 3AJ,City Centre,Oxford,51.7545486,-1.2577527,amenity,library,5,2,13.5
+106,106,107,Keble College Library,amenity:library,OX1 3PG,City Centre,Oxford,51.7587616,-1.2576534,amenity,library,4,2,12.0
+107,107,108,JRR Tolkien,historic:memorial,OX3 7RL,Headington,Oxford,51.7626828,-1.221365,historic,memorial,5,2,13.5
+108,108,109,Cowley Barracks,historic:memorial,OX4 2PS,Cowley,Oxford,51.7417349,-1.2031956,historic,memorial,1,2,7.5
+109,109,110,Ripon Hall,historic:memorial,OX1 5ET,Oxfordshire,Vale of White Horse,51.7155637,-1.2911846,historic,memorial,4,2,12.0
+110,110,111,Founders Opening Stone,historic:memorial,OX4 2BH,Cowley,Oxford,51.7307677,-1.2071355,historic,memorial,3,2,10.5
+111,111,112,Radcliffe Science Library,amenity:library,OX1 3QP,City Centre,Oxford,51.7580264,-1.2561185,amenity,library,1,2,7.5
+112,112,113,Kuwait Library,amenity:library,OX3 0EH,New Marston,Oxford,51.755939,-1.2365385,amenity,library,3,2,10.5
+113,113,114,John Moussouris Library,amenity:library,OX1 2LF,City Centre,Oxford,51.7562956,-1.2611479,amenity,library,5,2,13.5
+114,114,115,Bruce Naylor,historic:memorial,OX1 3BN,City Centre,Oxford,51.7555801,-1.2533469,historic,memorial,4,2,12.0
+115,115,116,Genetic Garden,leisure:garden,OX1 3QY,City Centre,Oxford,51.7601021,-1.2553516,leisure,garden,3,3,13.5
+116,116,117,Gandhi Plaque,historic:memorial,OX1 3AQ,Osney,Oxford,51.7606852,-1.2584383,historic,memorial,5,2,13.5
+117,117,118,Ark-T @ The Venue,amenity:arts_centre,OX4 3RQ,Cowley,Oxford,51.7319595,-1.2143211,amenity,arts_centre,3,2,10.5
+118,118,119,Starting Ring,historic:memorial,OX4 4EL,Iffley,Oxford,51.729969,-1.2403593,historic,memorial,5,2,13.5
+119,119,120,Oxford Canoe and Kayak Club,leisure:sports_centre,OX4 4AZ,East Oxford,Oxford,51.7364405,-1.2412256,leisure,sports_centre,5,3,16.5
+120,120,121,Isis Canoe Club,leisure:sports_centre,OX4 4AZ,East Oxford,Oxford,51.7372126,-1.2420103,leisure,sports_centre,4,3,15.0
+121,121,122,St Antony's College Library,amenity:library,OX2 6NB,North Oxford,Oxford,51.7628904,-1.2628296,amenity,library,4,2,12.0
+122,122,123,Sandford Lasher Memorial,historic:memorial,OX4 4XZ,Sandford-on-Thames,South Oxfordshire,51.7114317,-1.2353325,historic,memorial,3,2,10.5
+123,123,124,Cecil Jackson-Cole,historic:memorial,OX1 3BS,City Centre,Oxford,51.7541705,-1.2572477,historic,memorial,4,2,12.0
+124,124,125,Last Bookshop,shop:books,OX1 3AE,City Centre,Oxford,51.7548504,-1.2593065,shop,books,3,0,4.5
+125,125,126,Christian Cole,historic:memorial,OX1 4BH,City Centre,Oxford,51.7523193,-1.2511788,historic,memorial,4,2,12.0
+126,126,127,William Wilkinson,historic:memorial,OX1 2LW,City Centre,Oxford,51.7549752,-1.2603317,historic,memorial,5,2,13.5
+127,127,128,Olive Gibbs,historic:memorial,OX1 1NP,City Centre,Oxford,51.7511848,-1.2659757,historic,memorial,2,2,9.0
+128,128,129,Pembroke Art,tourism:gallery,OX1 1QN,City Centre,Oxford,51.7498638,-1.2585622,tourism,gallery,1,5,16.5
+129,129,130,Oxford Blue,shop:gift,OX1 1RA,City Centre,Oxford,51.7489603,-1.2567691,shop,gift,4,0,6.0
+130,130,131,Boyle and Hooke,historic:memorial,OX1 4BJ,City Centre,Oxford,51.7526176,-1.2524427,historic,memorial,1,2,7.5
+131,131,132,Blackwell's Oxford,shop:books,OX1 3BS,City Centre,Oxford,51.7545945,-1.2557123,shop,books,1,0,1.5
+132,132,133,Harris Manchester College Library,amenity:library,OX1 3TD,City Centre,Oxford,51.7559753,-1.2519361,amenity,library,3,2,10.5
+133,133,134,Rhoda Broughton,historic:memorial,OX3 0FJ,Headington,Oxford,51.7547853,-1.2274382,historic,memorial,5,2,13.5
+134,134,135,Welcome to Iffley Meadows,tourism:information,OX4 4EJ,Iffley,Oxford,51.7287327,-1.2409984,tourism,information,3,5,19.5
+135,135,136,Turl Street / High Street,tourism:information,OX1 4AG,City Centre,Oxford,51.7523275,-1.2557774,tourism,information,1,5,16.5
+136,136,137,Acer Nethercott,historic:memorial,OX1 4PS,South Oxford,Oxford,51.741907,-1.2493503,historic,memorial,1,2,7.5
+137,137,138,John Henry Brookes,historic:memorial,OX3 7DX,Headington,Oxford,51.7516429,-1.2057926,historic,memorial,3,2,10.5
+138,138,139,Irvine Memorial,historic:memorial,OX1 4JD,City Centre,Oxford,51.7504881,-1.252787,historic,memorial,5,2,13.5
+139,139,140,John Thompson Memorial Stone,historic:memorial,OX2 6TQ,Summertown,Oxford,51.7689439,-1.2767364,historic,memorial,1,2,7.5
+140,140,141,Regent's Park College Library,amenity:library,OX1 2NF,City Centre,Oxford,51.756739,-1.26139,amenity,library,1,2,7.5
+141,141,142,Oxford City Football Club,leisure:sports_centre,OX3 0NQ,Old Marston,Oxford,51.7742227,-1.2286052,leisure,sports_centre,3,3,13.5
+142,142,143,Tank Bridge,tourism:viewpoint,OX2 0NJ,Oxfordshire,Oxford,51.7625431,-1.279014,tourism,viewpoint,3,5,19.5
+143,143,144,Eye-wash Hill,tourism:viewpoint,OX1 5EP,Oxfordshire,Vale of White Horse,51.7246835,-1.2891847,tourism,viewpoint,4,5,21.0
+144,144,145,Incredible Oxford,shop:gift,OX1 3EY,City Centre,Oxford,51.753032,-1.2585057,shop,gift,4,0,6.0
+145,145,146,Anthony à Wood,historic:memorial,OX1 4EX,City Centre,Oxford,51.7514477,-1.2518891,historic,memorial,2,2,9.0
+146,146,147,Prison A Wing,historic:memorial,OX1 1AZ,City Centre,Oxford,51.7515634,-1.2629687,historic,memorial,1,2,7.5
+147,147,148,Prison Debtors' Tower,historic:memorial,OX1 1AZ,City Centre,Oxford,51.7517174,-1.2629509,historic,memorial,2,2,9.0
+148,148,149,The Perimeter Wall at Oxford Prison,historic:memorial,OX1 1AZ,City Centre,Oxford,51.7518432,-1.2628952,historic,memorial,1,2,7.5
+149,149,150,"Archaeology, the Castle Ditch, and its skeletons",historic:memorial,OX1 1AY,City Centre,Oxford,51.7519752,-1.2626442,historic,memorial,3,2,10.5
+150,150,151,Vaulted Well Chamber,historic:memorial,OX1 1AZ,City Centre,Oxford,51.7521509,-1.2629871,historic,memorial,1,2,7.5
+151,151,152,Kennington War Memorial,historic:memorial,OX1 5LY,Oxfordshire,Vale of White Horse,51.7164008,-1.2453975,historic,memorial,4,2,12.0
+152,152,153,Evnomia Chambers,amenity:library,OX1 1NF,City Centre,Oxford,51.752011,-1.2610399,amenity,library,4,2,12.0
+153,153,154,Goodman Library,amenity:library,OX1 2DR,City Centre,Oxford,51.7532218,-1.2591887,amenity,library,3,2,10.5
+154,154,155,Percy Manning,historic:memorial,OX2 7EP,Summertown,Oxford,51.7790987,-1.2653386,historic,memorial,2,2,9.0
+155,155,156,Captain Noel Chavasse,historic:memorial,OX4 1DZ,East Oxford,Oxford,51.7497936,-1.2447401,historic,memorial,3,2,10.5
+156,156,157,James Sadler,historic:memorial,OX1 4JD,City Centre,Oxford,51.7507756,-1.2493924,historic,memorial,3,2,10.5
+157,157,158,Oxford Park & Ride,historic:memorial,OX1 4XG,South Oxford,Oxford,51.7296575,-1.2486945,historic,memorial,5,2,13.5
+158,158,159,Callaghan Library,amenity:library,OX3 9BY,Headington,Oxford,51.7661726,-1.2147328,amenity,library,5,2,13.5
+159,159,160,Ark-T @ Templar Square,amenity:arts_centre,OX4 3XH,Cowley,Oxford,51.7318753,-1.2167776,amenity,arts_centre,1,2,7.5
+160,160,161,Card Factory,shop:gift,OX4 3XX,Cowley,Oxford,51.7319804,-1.217148,shop,gift,5,0,7.5
+161,161,162,Osney Lock,tourism:information,OX2 0BE,Osney,Oxford,51.7496098,-1.2724716,tourism,information,2,5,18.0
+162,162,163,Thames Path,tourism:information,OX2 0BE,Osney,Oxford,51.7496229,-1.2724752,tourism,information,2,5,18.0
+163,163,164,Banjo Enclosure,historic:archaeological_site,OX4 4NZ,Littlemore,Oxford,51.7194183,-1.2310083,historic,archaeological_site,4,2,12.0
+164,164,165,TK Maxx,shop:department_store,OX1 1NZ,City Centre,Oxford,51.7500373,-1.2608989,shop,department_store,4,0,6.0
+165,165,166,Stone of Remembrance,historic:memorial,OX2 0LB,Botley,Vale of White Horse,51.7503055,-1.2932886,historic,memorial,5,2,13.5
+166,166,167,Elisabeth Rawson,historic:memorial,OX1 4JF,City Centre,Oxford,51.7503941,-1.2530224,historic,memorial,2,2,9.0
+167,167,168,George Best,historic:memorial,OX1 4JF,City Centre,Oxford,51.7504645,-1.2533333,historic,memorial,5,2,13.5
+168,168,169,Wizard's Emporium,shop:gift,OX1 3JE,City Centre,Oxford,51.752452,-1.2581722,shop,gift,3,0,4.5
+169,169,170,Barton Library,amenity:library,OX3 9LS,Barton,Oxford,51.7678495,-1.1964811,amenity,library,1,2,7.5
+170,170,171,Gallery Bouldering,leisure:sports_centre,OX4 1LF,East Oxford,Oxford,51.7474718,-1.2401007,leisure,sports_centre,2,3,12.0
+171,171,172,St Clement's WW1 Memorial Cross,historic:memorial,OX3 0ED,Headington,Oxford,51.752997,-1.2370791,historic,memorial,1,2,7.5
+172,172,173,1860 Oxford Evolution Debate,historic:memorial,OX1 3PR,City Centre,Oxford,51.7585681,-1.2560688,historic,memorial,4,2,12.0
+173,173,174,Oxford Bus Company Travel Shop & Lounge,tourism:information,OX1 2BU,City Centre,Oxford,51.7539314,-1.2622834,tourism,information,1,5,16.5
+174,174,175,Levellers Memorial,historic:memorial,OX1 2DF,City Centre,Oxford,51.754091,-1.2612978,historic,memorial,4,2,12.0
+175,175,176,Wycliffe Hall Library,amenity:library,OX2 6PW,North Oxford,Oxford,51.7626155,-1.2600927,amenity,library,3,2,10.5
+176,176,177,Jewish Cemetery,historic:memorial,OX1 4AU,City Centre,Oxford,51.751433,-1.2472969,historic,memorial,1,2,7.5
+177,177,178,Tourist Information,tourism:information,OX1 3BS,City Centre,Oxford,51.7541458,-1.2573677,tourism,information,3,5,19.5
+178,178,179,Leopold Muller Memorial Library,amenity:library,OX1 2HG,City Centre,Oxford,51.7565797,-1.2630285,amenity,library,1,2,7.5
+179,179,180,"8, 10 & 10 Turn Again Lane",historic:memorial,OX1 1QL,City Centre,Oxford,51.7498639,-1.259992,historic,memorial,4,2,12.0
+180,180,181,Vere Harmsworth Library,amenity:library,OX1 3UB,City Centre,Oxford,51.7575924,-1.2538978,amenity,library,2,2,9.0
+181,181,182,Sainsbury Library,amenity:library,OX1 1HP,City Centre,Oxford,51.7532813,-1.2683081,amenity,library,5,2,13.5
+182,182,183,Oxford Experience,shop:gift,OX1 4AG,City Centre,Oxford,51.7521863,-1.2570245,shop,gift,3,0,4.5
+183,183,184,Welcome to the Oxford Canal,tourism:information,OX1 2EZ,City Centre,Oxford,51.7535409,-1.2651792,tourism,information,3,5,19.5
+184,184,185,Roger Bannister World Record Mile,historic:memorial,OX4 1EQ,East Oxford,Oxford,51.7465155,-1.241143,historic,memorial,2,2,9.0
+185,185,186,Simon Greenall,historic:memorial,OX4 1LS,East Oxford,Oxford,51.7503177,-1.2249099,historic,memorial,2,2,9.0
+186,186,187,Nizami Ganjavi Library,amenity:library,OX1 2LE,City Centre,Oxford,51.7557749,-1.2609583,amenity,library,2,2,9.0
+187,187,188,Revd W. A. Spooner,historic:memorial,OX1 3NP,City Centre,Oxford,51.7597573,-1.2581654,historic,memorial,1,2,7.5
+188,188,189,James Legge,historic:memorial,OX1 3NP,City Centre,Oxford,51.7595682,-1.2589205,historic,memorial,2,2,9.0
+189,189,190,The New Space,amenity:theatre,OX1 3TZ,City Centre,Oxford,51.7566007,-1.2525143,amenity,theatre,3,2,10.5
+190,190,191,Jubilee Bridge,historic:memorial,OX4 1DY,City Centre,Oxford,51.7475206,-1.2486438,historic,memorial,4,2,12.0
+191,191,192,Oxford Judo,leisure:sports_centre,OX4 1EQ,East Oxford,Oxford,51.7452443,-1.244194,leisure,sports_centre,4,3,15.0
+192,192,193,Jiu-Jitsu Republic,leisure:sports_centre,OX1 4NA,South Oxford,Oxford,51.7449792,-1.2604678,leisure,sports_centre,3,3,13.5
+193,193,194,ST Lee Gallery and Treasury,tourism:museum,OX1 3BG,City Centre,Oxford,51.755189,-1.2552135,tourism,museum,3,5,19.5
+194,194,195,Roger Bacon,historic:memorial,OX1 1NZ,City Centre,Oxford,51.7501919,-1.2606843,historic,memorial,3,2,10.5
+195,195,196,Headington Quarry War Memorial,historic:memorial,OX3 8LH,Headington,Oxford,51.757611,-1.1980984,historic,memorial,5,2,13.5
+196,196,197,KB Chen China Centre Library,amenity:library,OX2 6LU,North Oxford,Oxford,51.765885,-1.2625469,amenity,library,5,2,13.5
+197,197,198,Oxford University Canoe and Kayaking Club,leisure:sports_centre,OX2 0NL,Oxfordshire,Oxford,51.7647604,-1.2813962,leisure,sports_centre,3,3,13.5
+198,198,199,LeoQuent,shop:antiques,OX1 5AB,South Hinksey,Vale of White Horse,51.7353724,-1.2756056,shop,antiques,1,0,1.5
+199,199,200,Menkind,shop:gift,OX1 1PG,City Centre,Oxford,51.7493116,-1.2611455,shop,gift,1,0,1.5
+200,200,201,Godstow Abbey,tourism:information,OX2 8PN,Wolvercote,Oxford,51.7783232,-1.298945,tourism,information,4,5,21.0
+201,201,202,FusionArts,amenity:arts_centre,OX1 1HH,City Centre,Oxford,51.7528436,-1.2668492,amenity,arts_centre,4,2,12.0
+202,202,203,William Morris Viscount Nuffield,historic:memorial,OX1 1DQ,City Centre,Oxford,51.7480413,-1.2566345,historic,memorial,1,2,7.5
+203,203,204,Cairns Library,amenity:library,OX3 9DU,Headington,Oxford,51.7642919,-1.2187118,amenity,library,5,2,13.5
+204,204,205,Girdlestone Memorial Library,amenity:library,OX3 7HE,Headington,Oxford,51.7539773,-1.208969,amenity,library,1,2,7.5
+205,205,206,Knowledge Centre,amenity:library,OX3 7DQ,Headington,Oxford,51.7522384,-1.2141942,amenity,library,4,2,12.0
+206,206,207,Education Library,amenity:library,OX2 6PY,North Oxford,Oxford,51.7636447,-1.2559415,amenity,library,4,2,12.0
+207,207,208,Japanese Library,amenity:library,OX2 6NA,North Oxford,Oxford,51.7634247,-1.2622938,amenity,library,4,2,12.0
+208,208,209,Latin American Centre Library,amenity:library,OX2 6LY,North Oxford,Oxford,51.7643575,-1.2634847,amenity,library,2,2,9.0
+209,209,210,Rewley House Continuing Education Library,amenity:library,OX1 2JA,City Centre,Oxford,51.7571788,-1.2618774,amenity,library,5,2,13.5
+210,210,211,Thomas Willis,historic:memorial,OX1 4ET,City Centre,Oxford,51.7513765,-1.2523954,historic,memorial,1,2,7.5
+211,211,212,Henry Marten,historic:memorial,OX1 4ET,City Centre,Oxford,51.7513654,-1.2524447,historic,memorial,3,2,10.5
+212,212,213,Kathleen Major Library,amenity:library,OX4 1DY,East Oxford,Oxford,51.7496026,-1.2451539,amenity,library,4,2,12.0
+213,213,214,Wolfson College Library,amenity:library,OX2 6UD,North Oxford,Oxford,51.7707786,-1.2554449,amenity,library,1,2,7.5
+214,214,215,Birthwort,historic:memorial,OX2 8PN,Wolvercote,Oxford,51.7789532,-1.299234,historic,memorial,3,2,10.5
+215,215,216,Sohmen Concert Hall,amenity:theatre,OX2 6GG,City Centre,Oxford,51.7600217,-1.2635599,amenity,theatre,4,2,12.0
+216,216,217,Bate Collection of Musical Instruments,tourism:museum,OX2 6HQ,City Centre,Oxford,51.7603285,-1.2638754,tourism,museum,3,5,19.5
+217,217,218,John Towle Close,historic:memorial,OX1 4TZ,South Oxford,Oxford,51.7345633,-1.2529308,historic,memorial,5,2,13.5
+218,218,219,The Taxonomic Beds EUDICOTS,tourism:information,OX1 4AZ,City Centre,Oxford,51.7507158,-1.2472134,tourism,information,2,5,18.0
+219,219,220,"SUPER-ROSIDS, ROSIDS (FABIDS)/FABALES",tourism:information,OX1 4AZ,City Centre,Oxford,51.7506437,-1.2475083,tourism,information,5,5,22.5
+220,220,221,PLANTS THAT CHANGED THE WORLD And how they were moved,tourism:information,OX1 4AZ,City Centre,Oxford,51.7506924,-1.2469477,tourism,information,5,5,22.5
+221,221,222,A Greek Odyssey: Sibthorp's voyages in the footsteps of Dioscorides,tourism:information,OX1 4AZ,City Centre,Oxford,51.7505635,-1.2481087,tourism,information,3,5,19.5
+222,222,223,THE BOTANY OF GIN,tourism:information,OX1 4AZ,City Centre,Oxford,51.7502132,-1.2474647,tourism,information,1,5,16.5
+223,223,224,CARNIVOROUS PLANTS,tourism:information,OX1 4AZ,City Centre,Oxford,51.7507422,-1.2468755,tourism,information,4,5,21.0
+224,224,225,The Taxonomic Beds/ANGIOSPERMS WITH MONOCOLPATE POLLEN/A POLLEN PUZZLE SOLVED BY DNA,tourism:information,OX1 4AZ,City Centre,Oxford,51.7508483,-1.2470935,tourism,information,4,5,21.0
+225,225,226,PITCHER PLANT PARADISE,tourism:information,OX1 4AZ,City Centre,Oxford,51.7508628,-1.2466882,tourism,information,5,5,22.5
+226,226,227,BASAL EUDICOTS/PROTEALES,tourism:information,OX1 4AZ,City Centre,Oxford,51.7506682,-1.2473509,tourism,information,2,5,18.0
+227,227,228,Bodleian Humanities Library,amenity:library,OX2 6GG,City Centre,Oxford,51.7602715,-1.2642375,amenity,library,3,2,10.5
+228,228,229,Radcliffe Infirmary,historic:memorial,OX2 6GG,City Centre,Oxford,51.7603119,-1.2623716,historic,memorial,2,2,9.0
+229,229,230,Penrose Paving,tourism:information,OX2 6GG,City Centre,Oxford,51.7603985,-1.2624724,tourism,information,2,5,18.0
+230,230,231,First World War Memorial,historic:memorial,OX2 6RX,North Oxford,Oxford,51.7665512,-1.2687582,historic,memorial,4,2,12.0
+231,231,232,Pergamon Press Strike,historic:memorial,OX3 0BD,Headington,Oxford,51.7552601,-1.2279778,historic,memorial,1,2,7.5
+232,232,233,Welcome to The Rewley Road Swing Bridge,tourism:information,OX1 2RQ,City Centre,Oxford,51.7557087,-1.2701862,tourism,information,1,5,16.5
+233,233,234,Rewley Road Swing Bridge,historic:memorial,OX1 2RG,City Centre,Oxford,51.7556143,-1.2701169,historic,memorial,4,2,12.0
+234,234,235,Rewley Road Swing Bridge Restoration Project,tourism:information,OX1 2RG,City Centre,Oxford,51.7556624,-1.2701645,tourism,information,2,5,18.0
+235,235,236,Abel Beesley,historic:memorial,OX1 2EZ,City Centre,Oxford,51.7537836,-1.2656055,historic,memorial,4,2,12.0
