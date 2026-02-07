@@ -72,23 +72,11 @@ def generate_driver(file: str) -> List[Driver]:
     return drivers
 
 
-def trip_dates(start: date, end: date) -> List[date]:
-  n = (end - start).days
-  return [start + timedelta(days=i) for i in range(n + 1)]
-
-def extract_plan_attractions(plan: Plan) -> List[str]:
-  # assumes plan.days -> day.items -> item.name
-  out = []
-  for day in plan.days:
-      for item in day.items:
-          out.append(item.name)
-  return out
-
-def generate_driver_scores(drivers: Driver, plan: Plan, request: TripRequest):
+def generate_driver_scores(drivers: Driver, plan: RoutePlan, request: TripRequest):
     must_set = set(request.must_visits)
-    plan_set = set(extract_plan_attractions(plan))
+    plan_set = set(plan.attractions)
     optional_set = plan_set - must_set
-    tdays = trip_dates(request.start_date, request.end_date)
+    
 
     scored: List[DriverScore] = []
 
@@ -100,7 +88,7 @@ def generate_driver_scores(drivers: Driver, plan: Plan, request: TripRequest):
             continue
         if request.service not in d.services:
             continue
-        if any(day in d.unavailable_dates for day in tdays):
+        if any(request.day in d.unavailable_dates):
             continue
 
         # --- scoring ---
