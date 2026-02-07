@@ -57,7 +57,7 @@ Theme: {route.theme.value}
 Duration: {route.total_duration_min} minutes
 Total cost: £{route.total_cost:.0f}
 Transport: {request.service.value}
-Budget: £{request.budget.min:.0f}–£{request.budget.max:.0f}
+Budget: £{request.budget:.0f}
 City: {request.city or "unknown"}
 Date: {request.chosen_date or "not specified"}
 {desc_block}
@@ -215,7 +215,7 @@ City: {request.city or "unknown"}
 Date: {request.chosen_date or "not specified"}
 Location: near ({request.start_point.lat}, {request.start_point.lng})
 Duration: {request.daily_duration_hours} hours
-Budget: £{request.budget.max}
+Budget: £{request.budget}
 Transport: {request.service.value}
 {desc_block}
 === ROUTES GENERATED ({len(route_summaries)}) ===
