@@ -16,11 +16,10 @@ import sys
 sys.path.insert(0, ".")
 
 from datetime import date
-
-from models import Budget, GeoPoint, TransportType, TripRequest
-from attraction_filter import load_attractions_from_csv
-from pipeline import generate_trip_plans
-from llm_enrichment import OpenAIClient, MockLLMClient
+from travel_planner.models import Budget, GeoPoint, TransportType, TripRequest
+from travel_planner.attraction_filter import load_attractions_from_csv
+from travel_planner.pipeline import generate_trip_plans
+from travel_planner.llm_enrichment import OpenAIClient, MockLLMClient
 
 
 async def actual_response(request: TripRequest):

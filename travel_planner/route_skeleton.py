@@ -9,7 +9,7 @@ import random
 
 import networkx as nx
 
-from models import (
+from travel_planner.models import (
     Attraction, GeoPoint, RouteSkeleton, RouteTheme,
     THEMES, TripRequest, haversine_km,
 )

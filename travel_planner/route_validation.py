@@ -10,7 +10,7 @@ import logging
 
 import networkx as nx
 
-from models import (
+from travel_planner.models import (
     Attraction, RouteSkeleton, ScheduleEntry,
     TripRequest, ValidatedRoute,
 )

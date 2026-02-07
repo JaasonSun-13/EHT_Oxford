@@ -8,7 +8,7 @@ import logging
 import uuid
 import datetime
 
-from models import (
+from travel_planner.models import (
     EnrichmentResult, RoutePlan, TimelineEntry,
     TripRequest, TripResponse, ValidatedRoute,
 )

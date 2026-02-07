@@ -1,5 +1,7 @@
+import random
 import streamlit as st
 from datetime import date, timedelta, datetime
+from driver import generate_driver, generate_driver_scores
 import loading_files
 from trip_request import create_trip_request
 from travel_planner import response 
@@ -21,7 +23,7 @@ def page_trip_setup():
     # language
     languages = st.multiselect(
         "Choose languages (multiple allowed)",
-        loading_files.load_languages(driver_data),
+        loading_files.load_languages("data_collection/Database/driver_identifier.csv"),
         default = []
     )
 
@@ -133,11 +135,12 @@ def page_matching():
     if st.button("Back"):
         st.session_state.step = 2
 
-    drivers = match_drivers(st.session_state.plan) #todo: add parameter
+    all_drivers = generate_driver("data_collection/Database/driver_identifier.csv")
+    drivers = generate_driver_scores(all_drivers, st.session_state.plan, st.session_state.trip_request) #todo: add parameter
     
     for i, d in enumerate(drivers):
-      st.subheader(f"{i+1}. {d.name}")
-      st.write("🗺 Can explain:", ", ".join(d.attractions))
+      st.subheader(f"{i+1}. {d.driver.name}")
+      st.write("🗺 Can explain:", ", ".join(d.adriver.ttractions))
 
       if st.button("Choose this driver", key=f"choose_driver_{i}"):
           st.session_state.selected_driver = d

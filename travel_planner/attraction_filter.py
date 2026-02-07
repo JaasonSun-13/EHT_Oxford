@@ -13,7 +13,7 @@ import logging
 from pathlib import Path
 import re
 
-from models import Attraction, GeoPoint, TripRequest, haversine_km
+from travel_planner.models import Attraction, GeoPoint, TripRequest, haversine_km
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +30,8 @@ def load_attractions_from_csv(city: str) -> list[Attraction]:
     Load from CSV.  Expected columns: attraction, lat, lng, popularity, price_range
     ID is auto-generated as a slug from the name.
     """
-    path = Path("data/attractions") / city.strip().lower().replace(" ", "_") + ".csv"
+    filename = city.strip().lower().replace(" ", "_") + ".csv"
+    path = Path("data_collection/Database") / filename
 
     attractions: list[Attraction] = []
     with open(path, newline="", encoding="utf-8") as f:

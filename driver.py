@@ -3,6 +3,9 @@ from typing import List
 from datetime import date, timedelta
 import pandas as pd
 
+from travel_planner.models import RoutePlan
+from trip_request import TripRequest
+
 @dataclass
 class Driver:
     id: int

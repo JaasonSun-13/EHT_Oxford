@@ -3,7 +3,8 @@ import pandas as pd
 
 def load_attractions_by_city(city: str) -> list[str]:
 
-    path = Path("data/attractions") / city.strip().lower().replace(" ", "_") + ".csv"
+    filename = city.strip().lower().replace(" ", "_") + ".csv"
+    path = Path("data_collection/Database") / filename
 
     if not path.exists():
         return []
@@ -12,11 +13,11 @@ def load_attractions_by_city(city: str) -> list[str]:
     df.columns = [c.strip().lower() for c in df.columns]
 
     # adjust column name if needed
-    if "Activity / Attraction" not in df.columns:
-        raise ValueError(f"{path.name} must contain an 'attraction' column")
+    if "activity / attraction" not in df.columns:
+        raise ValueError(f"Must contain an 'attraction' column")
 
     return (
-        df["Activity / Attraction"]
+        df["activity / attraction"]
         .dropna()
         .astype(str)
         .str.strip()
@@ -29,14 +30,17 @@ def load_languages(file: str) -> list[str]:
     df.columns = [c.strip().lower() for c in df.columns]
 
     # adjust column name if needed
-    if "Languages" not in df.columns:
-        raise ValueError(f"{file.name} must contain an 'attraction' column")
+    if "languages" not in df.columns:
+        raise ValueError(f"Must contain an 'language' column")
 
     return (
-        df["Languages"]
+        df["languages"]
         .dropna()
         .astype(str)
-        .str.strip()
-        .unique()
-        .tolist()
-    )
+        .str.split(",")      # split each cell
+        .explode()           # flatten into one column
+        .str.strip()         # clean whitespace
+        .str.lower()         # optional: normalize case
+        .drop_duplicates()   # remove duplicates
+        .sort_values()       # optional: nice ordering
+        .tolist())
