@@ -1,12 +1,10 @@
 import streamlit as st
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import loading_files
 
 # pages
 def page_trip_setup():
     st.header("Trip Setup")
-    #todo: budger amx and min
-    #todo: ai description
 
     # name
     name = st.text_input("Your name")
