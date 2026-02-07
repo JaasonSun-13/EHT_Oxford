@@ -23,3 +23,20 @@ def load_attractions_by_city(city: str) -> list[str]:
         .unique()
         .tolist()
     )
+
+def load_languages(file: str) -> list[str]:
+    df = pd.read_csv(file)
+    df.columns = [c.strip().lower() for c in df.columns]
+
+    # adjust column name if needed
+    if "Languages" not in df.columns:
+        raise ValueError(f"{file.name} must contain an 'attraction' column")
+
+    return (
+        df["Languages"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+        .unique()
+        .tolist()
+    )

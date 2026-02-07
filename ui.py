@@ -1,39 +1,33 @@
 import streamlit as st
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import loading_files
+from trip_request import create_trip_request
 
 # pages
 def page_trip_setup():
     st.header("Trip Setup")
-    #todo: budger amx and min
-    #todo: ai description
-
-    # name
-    name = st.text_input("Your name")
 
     # date
-    start_date = st.date_input(
-        "Start date",
+    chosen_date = st.date_input(
+        "Date",
         value = date.today()
     )
-    end_date = st.date_input(
-        "End date",
-        value = start_date + timedelta(days=3),
-        min_value = start_date
-    )
 
-    days = (end_date - start_date).days
-    st.write("Trip duration:", days, "days")
+    # duration
+    duration = st.slider("Duration(hrs)", min_value=0.0, max_value=10.0, value=5.0, step=0.5)
 
     # language
-    language = st.selectbox("Choose your preffered language:", ["a", "b"])
+    languages = st.multiselect(
+        "Choose languages (multiple allowed)",
+        loading_files.load_languages(driver_data),
+        default = []
+    )
 
     # city
     city = st.selectbox("Choose a city", ["Oxford", "London", "Bristol"])
 
     # attraction
-    #attractions = loading_files.load_attractions_by_city(city)
-    attractions = ["s"]
+    attractions = loading_files.load_attractions_by_city(city)
     
     must_visits = st.multiselect(
         "Choose attractions (multiple allowed)",
@@ -63,17 +57,17 @@ def page_trip_setup():
     st.subheader("Budget maximum")
     budget_max = st.slider("Maximum budget (£)", 0, 10000, 800, step=50)
 
+    trip_request = create_trip_request(must_visit_ids=must_visits, 
+                                       duration=duration,
+                                       max_budget=budget_max,
+                                       service=service,
+                                       chosen_date=chosen_date,
+                                       city=city,
+                                       languages=languages,
+                                       description=preference_text)
+
     if st.button("Next"):
-        st.session_state.name = name
-        st.session_state.start_date = start_date
-        st.session_state.end_date = end_date
-        st.session_state.days = days
-        st.session_state.language = language
-        st.session_state.city = city
-        st.session_state.must_visits = must_visits
-        st.session_state.preference_text = preference_text
-        st.session_state.service = service
-        st.session_state.budget_max = budget_max
+        st.session_state.trip_request = trip_request
         st.session_state.step = 2
 
 
@@ -84,12 +78,7 @@ def page_plans():
         st.session_state.step = 1
 
     # Generate plans ONCE
-    plans = generate_five_plans(
-        city = st.session_state.city,
-        must_visits = st.session_state.must_visits,
-        days = st.session_state.days
-        service = st.session_state.service
-    )
+    plans = generate_five_plans(st.session_state.trip_request)
 
     # Display the 5 plans
     for i, plan in enumerate(["we", "s"]):
