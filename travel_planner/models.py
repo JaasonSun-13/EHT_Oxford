@@ -53,7 +53,7 @@ class TripRequest:
     end_point: GeoPoint
     must_visit_ids: list[str] = field(default_factory=list)
     daily_duration_hours: float = 8.0
-    budget: Budget = field(default_factory=Budget)
+    budget: int = 500
     service: TransportType = TransportType.WALK
     chosen_date: date = field(default_factory=date.today)
     city: str = "oxford"
