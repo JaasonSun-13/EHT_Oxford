@@ -45,7 +45,12 @@ async def main():
     # 3. Choose LLM client
     #    Set OPENAI_API_KEY env var to use real OpenAI, otherwise falls back to mock
     
+<<<<<<< Updated upstream
     api_key = "sk-your-key-here"
+=======
+
+    api_key = os.environ.get("OPENAI_API_KEY")
+>>>>>>> Stashed changes
     if api_key:
         llm = OpenAIClient(api_key=api_key)  # default: gpt-4o-mini
         print("Using OpenAI")
