@@ -59,7 +59,7 @@ Total cost: £{route.total_cost:.0f}
 Transport: {request.service.value}
 Budget: £{request.budget.min:.0f}–£{request.budget.max:.0f}
 City: {request.city or "unknown"}
-Date: {request.date or "not specified"}
+Date: {request.chosen_date or "not specified"}
 {desc_block}
 === ATTRACTIONS (visit order) ===
 {json.dumps(attrs, indent=2)}
@@ -85,25 +85,10 @@ class LLMClient:
         raise NotImplementedError
 
 
-class AnthropicClient(LLMClient):
-    def __init__(self, api_key, model="claude-sonnet-4-5-20250929"):
-        import anthropic
-        self.client = anthropic.AsyncAnthropic(api_key=api_key)
-        self.model = model
-
-    async def complete(self, prompt, system=""):
-        resp = await self.client.messages.create(
-            model=self.model, max_tokens=1024,
-            system=system or "You are a travel planning assistant. Return only valid JSON.",
-            messages=[{"role": "user", "content": prompt}],
-        )
-        return resp.content[0].text
-
-
 class OpenAIClient(LLMClient):
     def __init__(self, api_key, model="gpt-4o-mini"):
         from openai import AsyncOpenAI
-        self.client = AsyncOpenAI(api_key=api_key)
+        api_key = "sk-your-key-here"
         self.model = model
 
     async def complete(self, prompt, system=""):
@@ -227,7 +212,7 @@ def _build_trip_description_prompt(routes, request, lookup):
 
 === TRIP INFO ===
 City: {request.city or "unknown"}
-Date: {request.date or "not specified"}
+Date: {request.chosen_date or "not specified"}
 Location: near ({request.start_point.lat}, {request.start_point.lng})
 Duration: {request.daily_duration_hours} hours
 Budget: £{request.budget.max}

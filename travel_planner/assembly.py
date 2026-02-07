@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import logging
 import uuid
-from datetime import datetime
+import datetime
 
 from models import (
     EnrichmentResult, RoutePlan, TimelineEntry,
@@ -57,7 +57,7 @@ def assemble_response(routes, enrichments, request, candidate_count, trip_descri
     resp = TripResponse(
         request_id=str(uuid.uuid4()),
         routes=plans,
-        generated_at=datetime.now().isoformat(),
+        generated_at=datetime.datetime.now().isoformat(),
         candidate_count=candidate_count,
         trip_description=trip_description,
     )

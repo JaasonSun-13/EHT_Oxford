@@ -10,16 +10,18 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
+from datetime import date
 from enum import Enum
 from typing import Optional
 
 DEFAULT_VISIT_MINUTES = 45
 
 
-class TransportType(str, Enum):
-    WALK = "walk"
-    BIKE = "bike"
-    CAR = "car"
+class TransportType(Enum):
+    WALK = "Your GOOD Buddy"
+    BIKE = "Bike Guide"
+    CAR = "Driver only"
+    DRIVERGUIDE = "Driver Guide"
 
 
 class RouteTheme(str, Enum):
@@ -53,10 +55,10 @@ class TripRequest:
     daily_duration_hours: float = 8.0
     budget: Budget = field(default_factory=Budget)
     service: TransportType = TransportType.WALK
-    date: Optional[str] = None          # ISO date string, e.g. "2024-10-01"
-    city: Optional[str] = None          # for future use, e.g. to adjust LLM prompts
+    chosen_date: date = field(default_factory=date.today)
+    city: str = "oxford"
     languages: list[str] = field(default_factory=lambda: ["en"])
-    description: str = ""           # free-text trip preference → forwarded to LLM
+    description: str = ""
 
     @property
     def daily_minutes(self) -> int:
@@ -149,8 +151,7 @@ class TripResponse:
     routes: list[RoutePlan]
     generated_at: str
     candidate_count: int
-    trip_description: str | None = None
-
+    trip_description: str = ""      # LLM-generated summary of the whole trip
 
 
 def haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:

@@ -18,8 +18,18 @@ logger = logging.getLogger(__name__)
 
 START = "__START__"
 END = "__END__"
-SPEEDS = {"walk": 5.0, "bike": 15.0, "car": 40.0}
-DETOUR = {"walk": 1.3, "bike": 1.25, "car": 1.4}
+SPEEDS = {
+    "Your GOOD Buddy": 5.0,
+    "Bike Guide": 15.0,
+    "Driver only": 40.0,
+    "Driver Guide": 40.0,
+}
+DETOUR = {
+    "Your GOOD Buddy": 1.3,
+    "Bike Guide": 1.25,
+    "Driver only": 1.4,
+    "Driver Guide": 1.4,
+}
 
 
 def build_graph(start, end, attractions, transport):

@@ -15,6 +15,8 @@ import sys
 
 sys.path.insert(0, ".")
 
+from datetime import date
+
 from models import Budget, GeoPoint, TransportType, TripRequest
 from attraction_filter import load_attractions_from_csv
 from pipeline import generate_trip_plans
@@ -33,8 +35,8 @@ async def main():
         must_visit_ids=["bodleian_library"],        # use slugified names
         daily_duration_hours=6,
         budget=Budget(min=0, max=50),
-        service=TransportType.WALK,
-        date="2024-10-01",
+        service=TransportType.WALK,         # "Your GOOD Buddy"
+        chosen_date= date(2024, 10, 1),
         city="oxford",
         languages=["en"],
         description="I love history and architecture, prefer quiet spots",
@@ -42,7 +44,8 @@ async def main():
 
     # 3. Choose LLM client
     #    Set OPENAI_API_KEY env var to use real OpenAI, otherwise falls back to mock
-    api_key = os.environ.get("OPENAI_API_KEY")
+    
+    api_key = "sk-your-key-here"
     if api_key:
         llm = OpenAIClient(api_key=api_key)  # default: gpt-4o-mini
         print("Using OpenAI")
