@@ -34,7 +34,7 @@ async def main():
         end_point=GeoPoint(51.7500, -1.2568),      # Christ Church area
         must_visit_ids=["bodleian_library"],        # use slugified names
         daily_duration_hours=6,
-        budget=Budget(min=0, max=50),
+        budget=500,
         service=TransportType.WALK,         # "Your GOOD Buddy"
         chosen_date= date(2024, 10, 1),
         city="oxford",
@@ -45,12 +45,9 @@ async def main():
     # 3. Choose LLM client
     #    Set OPENAI_API_KEY env var to use real OpenAI, otherwise falls back to mock
     
-<<<<<<< Updated upstream
-    api_key = "sk-your-key-here"
-=======
-
+    
     api_key = os.environ.get("OPENAI_API_KEY")
->>>>>>> Stashed changes
+
     if api_key:
         llm = OpenAIClient(api_key=api_key)  # default: gpt-4o-mini
         print("Using OpenAI")

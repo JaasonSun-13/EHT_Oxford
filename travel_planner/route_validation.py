@@ -29,7 +29,7 @@ def validate_skeleton(sk, G, must_visit, candidates, request):
     lookup = {a.id: a for a in must_visit + candidates}
     must_ids = {a.id for a in must_visit}
     daily_limit = request.daily_minutes
-    budget_left = request.budget.max
+    budget_left = request.budget
 
     elapsed = 0
     prev = START
