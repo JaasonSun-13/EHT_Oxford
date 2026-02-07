@@ -16,10 +16,10 @@ def base_price(df):
     return
 
 
-def main():
+def Driver_pricing():
     df = pd.read_csv('data_collection/Database/driver_identifier.csv')
     base_price(df)
     return
 
 if __name__ == "__main__":
-    main()
+    Driver_pricing()
