@@ -32,6 +32,11 @@ class TripRequest:
     languages: list[str] = field(default_factory=lambda: ["en"])
     description: str = ""  
 
+    @property
+    def daily_minutes(self) -> int:
+        return int(self.daily_duration_hours * 60)
+
+
 def create_trip_request(
     *,
     must_visit_ids: list[str],

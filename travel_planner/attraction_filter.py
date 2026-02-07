@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import csv
 import logging
+from pathlib import Path
 import re
 
 from models import Attraction, GeoPoint, TripRequest, haversine_km
@@ -24,11 +25,13 @@ MAX_CANDIDATES = 100
 # CSV loader
 # =============================================================================
 
-def load_attractions_from_csv(path: str) -> list[Attraction]:
+def load_attractions_from_csv(city: str) -> list[Attraction]:
     """
     Load from CSV.  Expected columns: attraction, lat, lng, popularity, price_range
     ID is auto-generated as a slug from the name.
     """
+    path = Path("data/attractions") / city.strip().lower().replace(" ", "_") + ".csv"
+
     attractions: list[Attraction] = []
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)

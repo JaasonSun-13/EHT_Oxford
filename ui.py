@@ -2,6 +2,8 @@ import streamlit as st
 from datetime import date, timedelta, datetime
 import loading_files
 from trip_request import create_trip_request
+from travel_planner import response 
+
 
 # pages
 def page_trip_setup():
@@ -77,21 +79,50 @@ def page_plans():
     if st.button("Back"):
         st.session_state.step = 1
 
-    # Generate plans ONCE
-    plans = generate_five_plans(st.session_state.trip_request)
+    response = response.actual_response(st.session_state.trip_request)
+    st.write(f"request_id: {response.request_id}")
+    st.write(f"candidate_count: {response.candidate_count}")
+    st.write(f"trip_description: {response.trip_description}")
 
     # Display the 5 plans
-    for i, plan in enumerate(["we", "s"]):
-        with st.expander(f"Plan {i+1}: {plan.title}", expanded=(i == 0)):
-            st.caption(plan.reason)
+    for i, r in enumerate(response.routes):
+        title = f"{r.theme}" if getattr(r, "theme", None) else f"Route {r.route_id}"
 
-            for day in plan.days:
-                st.markdown(f"**Day {day.day}**")
-                for item in day.items:
-                    st.write(f"• {item.name}")
+        with st.expander(f"Plan {i+1}: {title}", expanded=(i == 0)):
+            # Top summary
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Duration (hrs)", f"{r.total_duration_hours:.1f}")
+            c2.metric("Total cost", f"{r.total_cost:.2f}")
+            c3.metric("Stops", len(r.timeline))
+            c4.metric("Route ID", str(r.route_id))
+
+            # Optional fields
+            if getattr(r, "explanation", None):
+                st.caption(r.explanation)
+
+            if getattr(r, "attractions", None):
+                st.markdown("**Attractions**")
+                for a in r.attractions:
+                    st.write(f"• {a}")
+
+            if getattr(r, "micro_stops", None):
+                st.markdown("**Micro-stops**")
+                for ms in r.micro_stops:
+                    st.write(f"• {ms}")
+
+            # Timeline (your list of dict-like items)
+            st.markdown("**Timeline**")
+            for idx, t in enumerate(r.timeline, start=1):
+                st.write(
+                    f"{idx}. **{t.attraction_name}** "
+                    f"({t.offset_start_min}–{t.offset_end_min} min) · "
+                    f"Cost: {t.cost}"
+                )
+                if getattr(t, "travel_to_next_minutes", None) is not None:
+                    st.caption(f"Travel to next: {t.travel_to_next_minutes} min")
 
             if st.button("Choose this plan", key=f"choose_{i}"):
-                st.session_state.selected_plan = plan
+                st.session_state.selected_route = r
                 st.session_state.step = 3
                 st.rerun()
     
