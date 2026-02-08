@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import csv
 import logging
+from pathlib import Path
 import re
 
 from travel_planner.models import Attraction, GeoPoint, TripRequest, haversine_km
@@ -90,10 +91,11 @@ def filter_by_budget(candidates, budget, must_ids):
 
 def score_candidates(candidates, midpoint, radius_km):
     scored = []
+    max_pop = max((a.popularity for a in candidates), default = 1)
     for a in candidates:
         dist = haversine_km(midpoint.lat, midpoint.lng, a.latitude, a.longitude)
         proximity = max(0, 1.0 - dist / radius_km)
-        pop = a.popularity / 100.0
+        pop = a.popularity / max_pop
         score = 0.50 * proximity + 0.50 * pop
         scored.append((score, a))
     scored.sort(key=lambda x: x[0], reverse=True)

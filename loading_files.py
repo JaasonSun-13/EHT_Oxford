@@ -20,6 +20,7 @@ def load_attractions_by_city(city: str) -> list[str]:
         df["activity / attraction"]
         .dropna()
         .astype(str)
+        .str.replace("'", "", regex=False)
         .str.strip()
         .unique()
         .tolist()
@@ -37,6 +38,9 @@ def load_languages(file: str) -> list[str]:
         df["languages"]
         .dropna()
         .astype(str)
+        .str.replace("'", "", regex=False)
+        .str.replace("[", "", regex=False)
+        .str.replace("]", "", regex=False)
         .str.split(",")      # split each cell
         .explode()           # flatten into one column
         .str.strip()         # clean whitespace

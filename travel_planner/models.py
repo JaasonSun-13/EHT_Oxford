@@ -18,10 +18,10 @@ DEFAULT_VISIT_MINUTES = 45
 
 
 class TransportType(Enum):
-    WALK = "Your GOOD Buddy"
-    BIKE = "Bike Guide"
-    CAR = "Driver only"
-    DRIVERGUIDE = "Driver Guide"
+    WALK = "buddy"
+    BIKE = "bikeguide"
+    CAR = "driver"
+    DRIVERGUIDE = "driver-guide"
 
 
 class RouteTheme(str, Enum):
@@ -49,22 +49,20 @@ class Budget:
 
 @dataclass
 class TripRequest:
-    start_point: GeoPoint
-    end_point: GeoPoint
+    start_point: Optional[GeoPoint] = None
+    end_point: Optional[GeoPoint] = None
     must_visit_ids: list[str] = field(default_factory=list)
     daily_duration_hours: float = 8.0
     budget: int = 500
     service: TransportType = TransportType.WALK
-    chosen_date: date = field(default_factory=date.today)
-    city: str = "oxford"
-    languages: list[str] = field(default_factory=lambda: ["en"])
-    description: str = ""
+    chosen_date: date = field(default_factory=date.today)    
+    city: str = "oxford"     
+    languages: list[str] = field(default_factory=lambda: ["English"])
+    description: str = ""  
 
     @property
     def daily_minutes(self) -> int:
         return int(self.daily_duration_hours * 60)
-
-
 # Attraction  (from CSV: attraction, lat, lng, popularity, price_range)
 
 @dataclass

@@ -53,7 +53,7 @@ def build_graph(start, end, attractions, transport):
 
 
 def theme_score(a, theme, penalty=0.0):
-    p = a.popularity / 100.0
+    p = a.popularity / 5.0
     if theme == RouteTheme.FASTEST:
         base = 0.5 + 0.5 * p
     elif theme == RouteTheme.POPULAR:

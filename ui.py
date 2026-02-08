@@ -154,7 +154,7 @@ def page_matching():
     
     for i, d in enumerate(drivers):
       st.subheader(f"{i+1}. {d.driver.name}")
-      st.write("🗺 Can explain:", ", ".join(d.adriver.ttractions))
+      st.write("🗺 Can explain:", ", ".join(d.driver.attractions))
 
       if st.button("Choose this driver", key=f"choose_driver_{i}"):
           st.session_state.selected_driver = d

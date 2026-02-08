@@ -3,95 +3,139 @@ from typing import List
 from datetime import date, timedelta
 import pandas as pd
 
-from travel_planner.models import RoutePlan
+from travel_planner.models import RoutePlan, TransportType
 from trip_request import TripRequest
 
 @dataclass
 class Driver:
-    id: int
     name: str
     cities: List[str]
     languages: List[str]
-    services: List[str]
+    services: List[TransportType]
     attractions: List[str]  
-    price_per_day: int        
+    hourly_price: int        
     rating: float
-    unavaialble_date: List[date] = field(default_factory=list)
+    unavailable_dates: List[date] = field(default_factory=list)
 
 @dataclass
 class DriverScore:
     driver: Driver
     score: int
 
+def _norm(s: str) -> str:
+    return str(s).strip().replace("'", "").replace("[", "").replace("]", "").lower()
+
 
 def generate_driver(file: str) -> List[Driver]:
     df = pd.read_csv(file)
     df.columns = [c.strip().lower() for c in df.columns]
 
-    required = ["id", "name", "cities", "languages", "services", "attractions", "price_per_day", "rating"]
+    rename_map = {
+        "name": "name",
+        "city": "cities",
+        "service": "services",
+        "activity / attraction": "attractions",
+        "languages": "languages",
+        "rating": "rating",
+        "unavailable dates": "unavailable_dates",
+        "hourly price": "hourly_price",
+    }
+    df = df.rename(columns=rename_map)
+
+
+    required = [ "name", "cities", "services", "attractions", "languages", "rating"]
     missing = [c for c in required if c not in df.columns]
     if missing:
         raise ValueError(f"CSV missing required columns: {missing}")
 
-    def parse_list(cell) -> List[str]:
+    def _parse_list(cell) -> List[str]:
         if pd.isna(cell):
             return []
-        s = str(cell).strip()
+        s = _norm(cell)
         if not s:
             return []
         return [x.strip() for x in s.split(",") if x.strip()]
-    
-    def parse_dates(cell) -> List[date]:
-        if pd.isna(cell):
-            return []
-        s = str(cell).strip()
-        if not s:
-            return []
-        out: List[date] = []
-        for part in s.split(","):
-            part = part.strip()
-            if not part:
+        
+    def _parse_dates(cell) -> List[date]:
+        out = _parse_list(cell)
+        dates: List[date] = []
+        for x in out:
+            try:
+                dates.append(date.fromisoformat(str(x).strip()))
+            except Exception:
                 continue
-            # expects YYYY-MM-DD
-            out.append(date.fromisoformat(part))
-        return out
+        return dates
     
+    SERVICE_TRANS = {
+        "driver": TransportType.CAR,
+        "driver-guide" : TransportType.DRIVERGUIDE,
+        "buddy": TransportType.WALK,
+        "bikeguide": TransportType.BIKE,
+    }
+
+    def _parse_services(cell) -> list[TransportType]:
+        raw = _parse_list(cell)
+        out: list[TransportType] = []
+
+        for s in raw:
+            key = s.lower().strip()
+            if key in SERVICE_TRANS:
+                out.append(SERVICE_TRANS[key])
+            else:
+                print(f"⚠️ Unknown service: {s}")  # optional debug
+
+        return out
+        
     drivers: List[Driver] = []
     for _, row in df.iterrows():
         drivers.append(
             Driver(
-                id=int(row["id"]),
                 name=str(row["name"]).strip(),
-                cities=parse_list(row["cities"]),
-                languages=parse_list(row["languages"]),
-                services=parse_list(row["services"]),
-                attractions=parse_list(row["attractions"]),
-                price_per_day=int(row["price_per_day"]),
-                rating=float(row["rating"]),
-                unavailable_date=parse_dates(row["unavailable_date"]) if "unavailable_date" in df.columns else []
+                cities=_parse_list(row["cities"]),
+                languages=_parse_list(row["languages"]),
+                services=_parse_services(row["services"]),
+                attractions=_parse_list(row["attractions"]),
+                hourly_price=int(row["hourly_price"]),
+                rating=float(row["rating"]) if not pd.isna(row["rating"]) else 0.0,
+                unavailable_dates=_parse_dates(row["unavailable_dates"]) if "unavailable_dates" in df.columns else [],
             )
         )
-
     return drivers
 
 
-def generate_driver_scores(drivers: Driver, plan: RoutePlan, request: TripRequest):
-    must_set = set(request.must_visits)
-    plan_set = set(plan.attractions)
+def generate_driver_scores(drivers: list[Driver], plan: RoutePlan, request: TripRequest):
+    req_city = _norm(request.city)
+    req_service = request.service
+
+    req_langs = set(_norm(x) for x in (getattr(request, "languages", []) or []))
+    req_date = getattr(request, "chosen_date", None)  # adjust if your field differs
+
+    must_set = set(getattr(request, "must_visit_ids", []) or [])
+    plan_set = set(getattr(plan, "attractions", []) or [])
     optional_set = plan_set - must_set
-    
 
     scored: List[DriverScore] = []
-
+    filtered = {"city":0, "service":0, "lang":0, "date":0}
     for d in drivers:
-        # --- mandatory filters ---
-        if request.city not in d.cities:
+        driver_cities = { _norm(c) for c in d.cities }
+        driver_langs = { _norm(l) for l in d.languages }
+        driver_services = d.services
+
+        if req_city not in driver_cities:
             continue
-        if request.language not in d.languages:
+
+        if req_service not in driver_services:
+            print(req_service, driver_services)
+            filtered["service"] += 1
             continue
-        if request.service not in d.services:
+
+        # if user selected languages, require at least one overlap
+        if req_langs and not (req_langs & driver_langs):
+            filtered["lang"] += 1
             continue
-        if any(request.day in d.unavailable_dates):
+
+        if req_date is not None and req_date in d.unavailable_dates:
+            filtered["date"] += 1
             continue
 
         # --- scoring ---
@@ -102,6 +146,7 @@ def generate_driver_scores(drivers: Driver, plan: RoutePlan, request: TripReques
 
         scored.append(DriverScore(d, score))
 
+    print(filtered, "total drivers:", len(drivers), "matched:", len(scored))
     scored.sort(key=lambda m: m.score, reverse=True)
     return scored
     

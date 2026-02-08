@@ -3,41 +3,14 @@ from enum import Enum
 from datetime import date
 from typing import Optional
 
-@dataclass
-class GeoPoint:
-    lat: float
-    lng: float
-
-
-class TransportType(Enum):
-    WALK = "walk"
-    BIKE = "bike"
-    CAR = "car"
-    DRIVERGUIDE = "driver_guide"
-
-@dataclass
-class TripRequest:
-    start_point: Optional[GeoPoint] = None
-    end_point: Optional[GeoPoint] = None
-    must_visit_ids: list[str] = field(default_factory=list)
-    daily_duration_hours: float = 8.0
-    max_budget: int
-    service: TransportType = TransportType.WALK
-    chosen_date: date = field(default_factory=date.today)    
-    city: str = "oxford"     
-    languages: list[str] = field(default_factory=lambda: ["en"])
-    description: str = ""  
-
-    @property
-    def daily_minutes(self) -> int:
-        return int(self.daily_duration_hours * 60)
+from travel_planner.models import GeoPoint, TransportType, TripRequest
 
 
 def create_trip_request(
     *,
     must_visit_ids: list[str],
     duration: float,
-    max_budget: int,
+    budget: int,
     service: str,
     chosen_date: date,
     city: str,
@@ -53,11 +26,11 @@ def create_trip_request(
     }
 
     return TripRequest(
-        start_point=None,
-        end_point=None,
+        start_point=GeoPoint(lat=51.7520, lng=-1.2577),
+        end_point=GeoPoint(lat=51.7500, lng=-1.2568),
         must_visit_ids=must_visit_ids,
         daily_duration_hours=duration,
-        budget=Budget(min=0, max=max_budget),
+        budget=budget,
         service=service_map[service],
         chosen_date=chosen_date,
         city=city.lower(),
