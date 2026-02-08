@@ -10,10 +10,7 @@ from __future__ import annotations
 import json
 import logging
 
-from travel_planner.models import (
-    Attraction, EnrichmentResult, RouteTheme,
-    TripRequest, ValidatedRoute,
-)
+from travel_planner.models import (EnrichmentResult, RouteTheme)
 
 logger = logging.getLogger(__name__)
 

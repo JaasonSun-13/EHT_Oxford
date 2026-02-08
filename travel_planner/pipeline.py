@@ -6,11 +6,10 @@ from __future__ import annotations
 
 import logging
 
-from travel_planner.models import Attraction, TripRequest, TripResponse
 from travel_planner.attraction_filter import get_candidate_pool
 from travel_planner.route_skeleton import generate_skeletons
 from travel_planner.route_validation import validate_all
-from travel_planner.llm_enrichment import enrich_routes, generate_trip_description, LLMClient
+from travel_planner.llm_enrichment import enrich_routes, generate_trip_description
 from travel_planner.assembly import assemble_response
 
 logger = logging.getLogger(__name__)

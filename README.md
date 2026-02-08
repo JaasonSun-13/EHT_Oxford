@@ -2,6 +2,10 @@
 
 An AI-powered tour planning and guide matching system for Oxford (and other cities). Built with Streamlit, featuring a mobile-first UI with a 5-step booking flow.
 
+## How to work
+
+streamlit run app.py
+
 ## What it does
 
 1. **Setup** — Pick your date, city, languages, attractions, guide type, and budget

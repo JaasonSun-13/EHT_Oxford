@@ -8,12 +8,7 @@ from __future__ import annotations
 
 import logging
 
-import networkx as nx
-
-from travel_planner.models import (
-    Attraction, RouteSkeleton, ScheduleEntry,
-    TripRequest, ValidatedRoute,
-)
+from travel_planner.models import (ScheduleEntry, ValidatedRoute)
 
 logger = logging.getLogger(__name__)
 

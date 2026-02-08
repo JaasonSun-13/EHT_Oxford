@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 import re
 
-from travel_planner.models import Attraction, GeoPoint, TripRequest, haversine_km
+from travel_planner.models import Attraction, GeoPoint, haversine_km
 
 logger = logging.getLogger(__name__)
 

@@ -9,8 +9,7 @@ import uuid
 import datetime
 
 from travel_planner.models import (
-    EnrichmentResult, RoutePlan, TimelineEntry,
-    TripRequest, TripResponse, ValidatedRoute,
+     RoutePlan, TimelineEntry, TripResponse
 )
 
 logger = logging.getLogger(__name__)

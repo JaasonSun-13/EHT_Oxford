@@ -9,10 +9,7 @@ import random
 
 import networkx as nx
 
-from travel_planner.models import (
-    Attraction, GeoPoint, RouteSkeleton, RouteTheme,
-    THEMES, TripRequest, haversine_km,
-)
+from travel_planner.models import (RouteSkeleton, RouteTheme,THEMES, haversine_km)
 
 logger = logging.getLogger(__name__)
 

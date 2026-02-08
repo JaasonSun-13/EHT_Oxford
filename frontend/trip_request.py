@@ -1,8 +1,4 @@
-from dataclasses import dataclass, field
-from enum import Enum
 from datetime import date
-from typing import Optional
-
 from travel_planner.models import GeoPoint, TransportType, TripRequest
 
 

@@ -1,10 +1,11 @@
+import pandas as pd
 from dataclasses import dataclass, field
 from typing import List
-from datetime import date, timedelta
-import pandas as pd
+from datetime import date
+
 
 from travel_planner.models import RoutePlan, TransportType
-from trip_request import TripRequest
+from frontend.trip_request import TripRequest
 
 @dataclass
 class Driver:
