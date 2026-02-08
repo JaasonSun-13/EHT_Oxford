@@ -107,17 +107,11 @@ def page_plans():
             # Top summary
             c1, c2, c3, c4 = st.columns(4)
             c1.metric("Duration (hrs)", f"{r.total_duration_hours:.1f}")
-            c2.metric("Total cost", f"{r.total_cost:.2f}")
             c3.metric("Stops", len(r.timeline))
 
             # Optional fields
             if getattr(r, "explanation", None):
                 st.caption(r.explanation)
-
-            if getattr(r, "attractions", None):
-                st.markdown("**Attractions**")
-                for a in r.attractions:
-                    st.write(f"• {a}")
 
             if getattr(r, "micro_stops", None):
                 st.markdown("**Micro-stops**")
@@ -127,10 +121,12 @@ def page_plans():
             # Timeline (your list of dict-like items)
             st.markdown("**Timeline**")
             for idx, t in enumerate(r.timeline, start=1):
+                min = t.offset_end_min - t.offset_start_min
+                h = min // 60
+                min = min % 60
                 st.write(
                     f"{idx}. **{t.attraction_name}** "
-                    f"({t.offset_start_min}–{t.offset_end_min} min) · "
-                    f"Cost: {t.cost}"
+                    f"({h}hr {min}min) · "
                 )
                 if getattr(t, "travel_to_next_minutes", None) is not None:
                     st.caption(f"Travel to next: {t.travel_to_next_minutes} min")
