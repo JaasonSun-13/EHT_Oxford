@@ -22,56 +22,13 @@ class DriverScore:
     total_price: float | None = field(default=None)
 
 
-def build_test_structure():
-    names = [
-        "Aaron Harris",
-        "Abel Johnston",
-        "Abraham Hicks",
-        "Ace Kennedy",
-        "Adam Silva",
-        "Adonis Vasquez",
-        "Adrian Webb",
-        "Adriel Cole",
-        "Aidan Gonzales",
-        "Aiden Moreno",
-        "Alan Garza",
-        "Albert Sandoval",
-        "Alden Bailey",
-        "Alden Jimenez",
-        "Alec Rogers",
-        "Alejandro Rogers",
-        "Alessandro Perez",
-        "Alex Armstrong",
-        "Alexander Carpenter",
-        "Alfredo Clark",
-        "Ali Spencer",
-        "Allan Miller",
-        "Alonzo Robinson",
-    ]
-
-    structure = []
-    for n in names:
-        d = Driver(name=n)
-        structure.append(
-            DriverScore(driver=d, score=random.randint(50, 100))
-        )
-
-    return structure
-
-
-# build global test data
-test_stucture = build_test_structure()
-
 def time_adjust(base_price, time_str):
     dt = datetime.strptime(time_str, "%d/%m/%Y")
-
     surcharge = 1
     if dt.weekday() >= 5:
         surcharge = 1.5
-
     if dt.month == 12 and dt.day in [24, 25, 26]:
         surcharge += 4
-
     if dt.month in [7, 8]:
         surcharge += 1.5
 
@@ -83,7 +40,24 @@ def time_adjust(base_price, time_str):
     return base_price * surcharge
 
 
-def driverplan_compat_adjust(structure, travel_time_str):
+def driverplan_compat_adjust(
+        structure=test_stucture,
+        activities_str=[0], 
+        travel_time_str='10/02/2026',
+        city_csv_loc='data_collection/Database/oxford.csv'):
+    
+    df_city = pd.read_csv(city_csv_loc)
+
+    # convert to list if needed
+    if isinstance(activities_str, str):
+        activities = [x.strip() for x in activities_str.split(",")]
+    else:
+        activities = activities_str
+
+    matched = df_city[df_city["Activity / Attraction"].isin(activities)]
+
+    plan_price = matched["base_price"].sum()
+
 
     @dataclass
     class Driver_total_price:
@@ -115,6 +89,7 @@ def driverplan_compat_adjust(structure, travel_time_str):
             total = "N/A"
         else:
             base_total = ds.hourly_price * 8
+            base_total += plan_price
             total = time_adjust(base_total, travel_time_str)
 
         results.append(
@@ -126,11 +101,5 @@ def driverplan_compat_adjust(structure, travel_time_str):
     return results
 
 
-def pricing():
-    driverplan_compat_adjust(
-        structure=test_stucture, travel_time_str='10/02/2026'
-        )
-    return
-
 if __name__ == "__main__":
-    pricing()
+    driverplan_compat_adjust()
