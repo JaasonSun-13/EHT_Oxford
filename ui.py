@@ -165,9 +165,8 @@ def page_matching():
             st.session_state.step = 4
             st.rerun()
 
-
-def page_request_sent():
-    st.header("✅ Request Sent")
+def confirm_page():
+    st.header("Confirm Plan and Driver")
 
     driver_price = st.session_state.get("selected_driver_price")
     plan = st.session_state.get("selected_route")
@@ -176,19 +175,6 @@ def page_request_sent():
     if not driver_price or not plan:
         st.warning("Missing selection. Please choose a plan and a driver first.")
         return
-
-    # simple “reference id” for demo
-    if "request_id" not in st.session_state:
-        st.session_state.request_id = f"REQ-{random.randint(100000, 999999)}"
-
-
-    st.success(
-        f"Your request has been sent to **{driver_price.driver.name}**. "
-        f"The cost is **£{driver_price.total_price:.2f}**. "
-        f"We’ll notify you when they accept."
-    )
-
-    st.write(f"**Reference:** {st.session_state.request_id}")
 
     with st.expander("Trip details", expanded=True):
         st.write(f"**City:** {trip_request.city.capitalize()}")
@@ -201,6 +187,37 @@ def page_request_sent():
         st.write("**Attractions:**")
         for a in plan.attractions:
             st.write(f"- {a.replace('_', ' ').title()}")
+
+    st.subheader("Driver & Price")
+    st.write(f"**Driver:** {driver_price.driver.name}")
+    st.write(f"**Total price:** £{driver_price.total_price:.2f}")
+
+    col_confirm, col_cancel = st.columns(2)
+
+    with col_confirm:
+        if st.button("✅ Confirm booking", type="primary"):
+            st.session_state.step = 5
+            st.rerun()
+
+    with col_cancel:
+        if st.button("❌ Cancel"):
+            st.session_state.step = 3  # go back to matching page
+            st.rerun()
+
+    
+def page_request_sent():
+    st.header("✅ Request Sent")
+
+    # simple “reference id” for demo
+    if "request_id" not in st.session_state:
+        st.session_state.request_id = f"REQ-{random.randint(100000, 999999)}"
+
+    st.write(f"**Reference:** {st.session_state.request_id}")
+
+    st.success(
+        f"Your request has been sent. "
+        f"We’ll notify you when they accept."
+    )
 
     if st.button("Start new trip"):
         # reset only what you need
@@ -222,4 +239,6 @@ elif st.session_state.step == 2:
 elif st.session_state.step == 3:
     page_matching()
 elif st.session_state.step == 4:
+    confirm_page()
+elif st.session_state.step == 5:
     page_request_sent()
