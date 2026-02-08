@@ -2,7 +2,8 @@ import asyncio
 import random
 import re
 import streamlit as st
-from datetime import date, timedelta, datetime
+from datetime import date, time, timedelta, datetime
+from active_pricing.pricing import driverplan_compat_adjust
 from driver import generate_driver, generate_driver_scores
 import loading_files
 from trip_request import create_trip_request
@@ -68,7 +69,7 @@ def page_trip_setup():
 
     # budget
     st.subheader("Budget maximum")
-    budget_max = st.slider("Maximum budget (£)", 0, 10000, 800, step=50)
+    budget_max = st.slider("Maximum budget (£)", 0, 3000, 1000, step=50)
 
     trip_request = create_trip_request(must_visit_ids=must_visit_ids, 
                                        duration=duration,
@@ -82,6 +83,7 @@ def page_trip_setup():
     if st.button("Next"):
         st.session_state.trip_request = trip_request
         st.session_state.step = 2
+        st.rerun()
 
 
 def page_plans():
@@ -89,6 +91,7 @@ def page_plans():
 
     if st.button("Back"):
         st.session_state.step = 1
+        st.rerun()
 
     cur_response =  asyncio.run(response.actual_response(st.session_state.trip_request))
     st.write(f"request_id: {cur_response.request_id}")
@@ -106,7 +109,6 @@ def page_plans():
             c1.metric("Duration (hrs)", f"{r.total_duration_hours:.1f}")
             c2.metric("Total cost", f"{r.total_cost:.2f}")
             c3.metric("Stops", len(r.timeline))
-            c4.metric("Route ID", str(r.route_id))
 
             # Optional fields
             if getattr(r, "explanation", None):
@@ -144,60 +146,63 @@ def page_matching():
 
     if st.button("Back"):
         st.session_state.step = 2
+        st.rerun()
 
+    trip_request = st.session_state.get("trip_request")
+    plan = st.session_state.get("selected_route")
     all_drivers = generate_driver("data_collection/Database/driver_identifier.csv")
-    drivers = generate_driver_scores(all_drivers, st.session_state.selected_route, st.session_state.trip_request)
+    driver_score = generate_driver_scores(all_drivers, plan, trip_request)
+    driver_with_total_price = driverplan_compat_adjust(driver_score, trip_request.chosen_date, plan.attractions, trip_request.budget)
 
-    st.write(f"Loaded drivers: {len(all_drivers)}")
-    st.write(f"Matched drivers: {len(drivers)}")
-    
-    for i, d in enumerate(drivers[:10]):
-      st.subheader(f"{i+1}. {d.driver.name}")
-      st.write("🗺 Can explain:", ", ".join(d.driver.attractions))
+    for i, dp in enumerate(driver_with_total_price[:10]):
+        col_left, col_right = st.columns([3, 1])
 
-      if st.button("Choose this driver", key=f"choose_driver_{i}"):
-          st.session_state.selected_driver = d
-          st.success("Driver selected!")
-          st.session_state.step = 4
+        with col_left:
+            st.subheader(f"{i+1}. {dp.driver.name}")
+
+        with col_right:
+            st.subheader(f"£{dp.total_price:.2f}")
+      
+        if st.button("Choose this driver", key=f"choose_driver_{i}"):
+            st.session_state.selected_driver_price = dp
+            st.success("Driver selected!")
+            st.session_state.step = 4
+            st.rerun()
 
 
 def page_request_sent():
     st.header("✅ Request Sent")
 
-    driver = st.session_state.get("selected_driver")
+    driver_price = st.session_state.get("selected_driver_price")
     plan = st.session_state.get("selected_route")
+    trip_request = st.session_state.get("trip_request")
 
-    if not driver or not plan:
+    if not driver_price or not plan:
         st.warning("Missing selection. Please choose a plan and a driver first.")
         return
 
     # simple “reference id” for demo
     if "request_id" not in st.session_state:
         st.session_state.request_id = f"REQ-{random.randint(100000, 999999)}"
-        st.session_state.request_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+
 
     st.success(
-        f"Your request has been sent to **{driver.name}**. "
+        f"Your request has been sent to **{driver_price.driver.name}**. "
+        f"The cost is **£{driver_price.total_price:.2f}**. "
         f"We’ll notify you when they accept."
     )
 
     st.write(f"**Reference:** {st.session_state.request_id}")
-    st.write(f"**Time:** {st.session_state.request_time}")
 
     with st.expander("Trip details", expanded=True):
-        st.write(f"**City:** {st.session_state.get('city')}")
-        st.write(f"**Dates:** {st.session_state.get('start_date')} → {st.session_state.get('end_date')}")
-        st.write(f"**Language:** {st.session_state.get('language')}")
-        st.write(f"**Service:** {st.session_state.get('service')}")
+        st.write(f"**City:** {trip_request.city}")
+        st.write(f"**Date:** {trip_request.chosen_date}")
+        st.write(f"**Language:** {trip_request.languages}")
+        st.write(f"**Service:** {trip_request.service.value}")
 
     with st.expander("Selected plan", expanded=True):
-        st.subheader(plan.title)
-
-        # show day-by-day if you have it
-        for day in plan.days:
-            st.markdown(f"**Day {day.day}**")
-            for item in day.items:
-                st.write(f"• {item.name}")
+        st.write(f"**Plan Theme:** {plan.theme}")
+        st.write(f"**Attractions:** {plan.attractions}")
 
     col1, col2 = st.columns(2)
     with col1:

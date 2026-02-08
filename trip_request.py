@@ -24,7 +24,9 @@ def create_trip_request(
         "Driver only": TransportType.CAR,
         "Driver Guide": TransportType.DRIVERGUIDE,
     }
-
+    if languages == []:
+        languages = ["English"]
+        
     return TripRequest(
         start_point=GeoPoint(lat=51.7520, lng=-1.2577),
         end_point=GeoPoint(lat=51.7500, lng=-1.2568),
