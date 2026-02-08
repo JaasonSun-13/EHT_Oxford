@@ -1,0 +1,5 @@
+streamlit
+holidays
+pandas
+numpy
+openai
