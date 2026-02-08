@@ -13,8 +13,8 @@ from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum
 from typing import Optional
-
-DEFAULT_VISIT_MINUTES = 45
+import random
+from dataclasses import field
 
 
 class TransportType(Enum):
@@ -73,7 +73,9 @@ class Attraction:
     longitude: float
     popularity: float = 0.0         # 0-100
     price: float = 0.0              # per-visit cost from price_range column
-    visit_minutes: int = DEFAULT_VISIT_MINUTES
+    visit_minutes: int = field(default_factory=lambda: random.randint(30, 60))
+
+
 
 
 # Internal pipeline types
