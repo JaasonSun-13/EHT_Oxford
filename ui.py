@@ -202,18 +202,12 @@ def page_request_sent():
         for a in plan.attractions:
             st.write(f"- {a.replace('_', ' ').title()}")
 
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("Back to drivers"):
-            st.session_state.step = 3  # set this to your driver selection page number
-            st.rerun()
-    with col2:
-        if st.button("Start new trip"):
-            # reset only what you need
-            for k in ["plans", "selected_plan", "selected_driver", "request_id", "request_time", "must_visits"]:
-                st.session_state.pop(k, None)
-            st.session_state.step = 1
-            st.rerun()
+    if st.button("Start new trip"):
+        # reset only what you need
+        for k in ["plans", "selected_plan", "selected_driver", "request_id", "request_time", "must_visits"]:
+            st.session_state.pop(k, None)
+        st.session_state.step = 1
+        st.rerun()
 
 
 # main
