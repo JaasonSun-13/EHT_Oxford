@@ -18,18 +18,18 @@ DEFAULT_VISIT_MINUTES = 45
 
 
 class TransportType(Enum):
-    WALK = "buddy"
-    BIKE = "bikeguide"
-    CAR = "driver"
-    DRIVERGUIDE = "driver-guide"
+    WALK = "Your GOOD Buddy"
+    BIKE = "Bike Guide"
+    CAR = "Driver only"
+    DRIVERGUIDE = "Driver Guide"
 
 
 class RouteTheme(str, Enum):
-    FASTEST = "fastest"
-    POPULAR = "popular"
-    BALANCED = "balanced"
-    RELAXED = "relaxed"
-    HIDDEN_GEMS = "hidden_gems"
+    FASTEST = "Fastest"
+    POPULAR = "Popular"
+    BALANCED = "Balanced"
+    RELAXED = "Relaxed"
+    HIDDEN_GEMS = "Hidden Gems!"
 
 
 THEMES = list(RouteTheme)

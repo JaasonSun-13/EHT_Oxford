@@ -191,14 +191,16 @@ def page_request_sent():
     st.write(f"**Reference:** {st.session_state.request_id}")
 
     with st.expander("Trip details", expanded=True):
-        st.write(f"**City:** {trip_request.city}")
+        st.write(f"**City:** {trip_request.city.capitalize()}")
         st.write(f"**Date:** {trip_request.chosen_date}")
-        st.write(f"**Language:** {trip_request.languages}")
+        st.write(f"**Language:** {", ".join(trip_request.languages)}")
         st.write(f"**Service:** {trip_request.service.value}")
 
     with st.expander("Selected plan", expanded=True):
         st.write(f"**Plan Theme:** {plan.theme}")
-        st.write(f"**Attractions:** {plan.attractions}")
+        st.write("**Attractions:**")
+        for a in plan.attractions:
+            st.write(f"- {a.replace('_', ' ').title()}")
 
     col1, col2 = st.columns(2)
     with col1:

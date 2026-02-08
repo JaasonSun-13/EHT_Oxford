@@ -115,7 +115,7 @@ def generate_driver_scores(drivers: list[Driver], plan: RoutePlan, request: Trip
     optional_set = plan_set - must_set
 
     scored: List[DriverScore] = []
-    filtered = {"city":0, "service":0, "lang":0, "date":0}
+
     for d in drivers:
         driver_cities = { _norm(c) for c in d.cities }
         driver_langs = { _norm(l) for l in d.languages }
