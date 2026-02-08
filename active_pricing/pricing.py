@@ -9,17 +9,7 @@ import random
 
 
 
-@dataclass
-class Driver:
-    name: str
 
-
-@dataclass
-class DriverScore:
-    driver: Driver
-    score: int
-    hourly_price: float | None = field(default=None)
-    total_price: float | None = field(default=None)
 
 
 def time_adjust(base_price, time_str):
