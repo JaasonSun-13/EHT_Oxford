@@ -125,17 +125,13 @@ def generate_driver_scores(drivers: list[Driver], plan: RoutePlan, request: Trip
             continue
 
         if req_service not in driver_services:
-            print(req_service, driver_services)
-            filtered["service"] += 1
             continue
 
         # if user selected languages, require at least one overlap
         if req_langs and not (req_langs & driver_langs):
-            filtered["lang"] += 1
             continue
 
         if req_date is not None and req_date in d.unavailable_dates:
-            filtered["date"] += 1
             continue
 
         # --- scoring ---
@@ -146,7 +142,6 @@ def generate_driver_scores(drivers: list[Driver], plan: RoutePlan, request: Trip
 
         scored.append(DriverScore(d, score))
 
-    print(filtered, "total drivers:", len(drivers), "matched:", len(scored))
     scored.sort(key=lambda m: m.score, reverse=True)
     return scored
     

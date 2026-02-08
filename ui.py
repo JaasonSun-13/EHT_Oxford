@@ -81,7 +81,6 @@ def page_trip_setup():
 
     if st.button("Next"):
         st.session_state.trip_request = trip_request
-        print(st.session_state.trip_request)
         st.session_state.step = 2
 
 
@@ -152,21 +151,21 @@ def page_matching():
     st.write(f"Loaded drivers: {len(all_drivers)}")
     st.write(f"Matched drivers: {len(drivers)}")
     
-    for i, d in enumerate(drivers):
+    for i, d in enumerate(drivers[:10]):
       st.subheader(f"{i+1}. {d.driver.name}")
       st.write("🗺 Can explain:", ", ".join(d.driver.attractions))
 
       if st.button("Choose this driver", key=f"choose_driver_{i}"):
           st.session_state.selected_driver = d
           st.success("Driver selected!")
-          st.session_state.step = 3
+          st.session_state.step = 4
 
 
 def page_request_sent():
     st.header("✅ Request Sent")
 
-    driver = st.session_state.get("driver")
-    plan = st.session_state.get("plan")
+    driver = st.session_state.get("selected_driver")
+    plan = st.session_state.get("selected_route")
 
     if not driver or not plan:
         st.warning("Missing selection. Please choose a plan and a driver first.")
